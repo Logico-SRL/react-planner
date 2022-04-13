@@ -40,9 +40,9 @@ class ReactPlanner extends Component {
   }
 
   componentWillMount() {
-    let {store} = this.context;
+    let {rootStore} = this.props;
     let {projectActions, catalog, stateExtractor, plugins} = this.props;
-    plugins.forEach(plugin => plugin(store, stateExtractor));
+    plugins.forEach(plugin => plugin(rootStore, stateExtractor));
     projectActions.initCatalog(catalog);
   }
 
@@ -56,7 +56,7 @@ class ReactPlanner extends Component {
   }
 
   render() {
-    let {width, height, state, stateExtractor, ...props} = this.props;
+    let {width, height, state, stateExtractor, rootStore, ...props} = this.props;
 
     let contentW = width - toolbarW - sidebarW;
     let toolbarH = height - footerBarH;
@@ -116,13 +116,15 @@ ReactPlanner.defaultProps = {
 };
 
 //redux connect
-function mapStateToProps(reduxState) {
+function mapStateToProps(reduxState, ownp) {
+  // console.info('mapStateToProps reduxState', reduxState)
   return {
-    state: reduxState
+    state: reduxState,
+    ...ownp
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, rootStore) {
   return objectsMap(actions, actionNamespace => bindActionCreators(actions[actionNamespace], dispatch));
 }
 

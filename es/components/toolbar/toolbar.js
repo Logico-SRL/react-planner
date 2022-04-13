@@ -16,7 +16,7 @@ import ToolbarButton from './toolbar-button';
 import ToolbarSaveButton from './toolbar-save-button';
 import ToolbarLoadButton from './toolbar-load-button';
 import If from '../../utils/react-if';
-import { MODE_IDLE, MODE_3D_VIEW, MODE_3D_FIRST_PERSON, MODE_VIEWING_CATALOG, MODE_CONFIGURING_PROJECT } from '../../constants';
+import { MODE_IDLE, MODE_VIEWING_CATALOG, MODE_CONFIGURING_PROJECT } from '../../constants';
 import * as SharedStyle from '../../shared-style';
 
 var iconTextStyle = {
@@ -33,14 +33,6 @@ var Icon2D = function Icon2D(_ref) {
     'p',
     { style: _extends({}, iconTextStyle, style) },
     '2D'
-  );
-};
-var Icon3D = function Icon3D(_ref2) {
-  var style = _ref2.style;
-  return React.createElement(
-    'p',
-    { style: _extends({}, iconTextStyle, style) },
-    '3D'
   );
 };
 
@@ -101,7 +93,6 @@ var Toolbar = function (_Component) {
           allowProjectFileSupport = _props.allowProjectFileSupport,
           _context = this.context,
           projectActions = _context.projectActions,
-          viewer3DActions = _context.viewer3DActions,
           translator = _context.translator;
 
 
@@ -139,17 +130,6 @@ var Toolbar = function (_Component) {
           React.createElement(FaPlus, null)
         )
       }, {
-        index: 4, condition: true, dom: React.createElement(
-          ToolbarButton,
-          {
-            active: [MODE_3D_VIEW].includes(mode),
-            tooltip: translator.t('3D View'),
-            onClick: function onClick(event) {
-              return viewer3DActions.selectTool3DView();
-            } },
-          React.createElement(Icon3D, null)
-        )
-      }, {
         index: 5, condition: true, dom: React.createElement(
           ToolbarButton,
           {
@@ -158,18 +138,7 @@ var Toolbar = function (_Component) {
             onClick: function onClick(event) {
               return projectActions.setMode(MODE_IDLE);
             } },
-          [MODE_3D_FIRST_PERSON, MODE_3D_VIEW].includes(mode) ? React.createElement(Icon2D, { style: { color: alterateColor } }) : React.createElement(FaMousePointer, { style: { color: alterateColor } })
-        )
-      }, {
-        index: 6, condition: true, dom: React.createElement(
-          ToolbarButton,
-          {
-            active: [MODE_3D_FIRST_PERSON].includes(mode),
-            tooltip: translator.t('3D First Person'),
-            onClick: function onClick(event) {
-              return viewer3DActions.selectTool3DFirstPerson();
-            } },
-          React.createElement(MdDirectionsRun, null)
+          React.createElement(Icon2D, { style: { color: alterateColor } })
         )
       }, {
         index: 7, condition: true, dom: React.createElement(
@@ -232,7 +201,6 @@ Toolbar.propTypes = {
 Toolbar.contextTypes = {
   projectActions: PropTypes.object.isRequired,
   viewer2DActions: PropTypes.object.isRequired,
-  viewer3DActions: PropTypes.object.isRequired,
   linesActions: PropTypes.object.isRequired,
   holesActions: PropTypes.object.isRequired,
   itemsActions: PropTypes.object.isRequired,

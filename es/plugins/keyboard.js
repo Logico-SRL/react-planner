@@ -1,4 +1,4 @@
-import { MODE_IDLE, MODE_3D_FIRST_PERSON, MODE_3D_VIEW, MODE_SNAPPING, KEYBOARD_BUTTON_CODE } from '../constants';
+import { MODE_IDLE, MODE_SNAPPING, KEYBOARD_BUTTON_CODE } from '../constants';
 
 import { rollback, undo, remove, toggleSnap, copyProperties, pasteProperties, setAlterateState } from '../actions/project-actions';
 
@@ -6,7 +6,7 @@ export default function keyboard() {
 
   return function (store, stateExtractor) {
 
-    window.addEventListener('keydown', function (event) {
+    if (typeof window != 'undefined') window.addEventListener('keydown', function (event) {
 
       var state = stateExtractor(store.getState());
       var mode = state.get('mode');
@@ -15,7 +15,7 @@ export default function keyboard() {
         case KEYBOARD_BUTTON_CODE.BACKSPACE:
         case KEYBOARD_BUTTON_CODE.DELETE:
           {
-            if ([MODE_IDLE, MODE_3D_FIRST_PERSON, MODE_3D_VIEW].includes(mode)) store.dispatch(remove());
+            if ([MODE_IDLE].includes(mode)) store.dispatch(remove());
             break;
           }
         case KEYBOARD_BUTTON_CODE.ESC:
@@ -45,7 +45,7 @@ export default function keyboard() {
             var selectedLayer = state.getIn(['scene', 'selectedLayer']);
             var selected = state.getIn(['scene', 'layers', selectedLayer, 'selected']);
 
-            if ((mode === MODE_IDLE || mode === MODE_3D_VIEW) && (selected.holes.size || selected.areas.size || selected.items.size || selected.lines.size)) {
+            if (mode === MODE_IDLE && (selected.holes.size || selected.areas.size || selected.items.size || selected.lines.size)) {
               if (selected.holes.size) {
                 var hole = state.getIn(['scene', 'layers', selectedLayer, 'holes', selected.holes.get(0)]);
                 store.dispatch(copyProperties(hole.get('properties')));
@@ -75,7 +75,7 @@ export default function keyboard() {
       }
     });
 
-    window.addEventListener('keyup', function (event) {
+    if (typeof window != 'undefined') window.addEventListener('keyup', function (event) {
 
       var state = stateExtractor(store.getState());
       var mode = state.get('mode');

@@ -1,3 +1,5 @@
+import { Map } from 'immutable';
+
 import {
   UPDATE_2D_CAMERA,
   SELECT_TOOL_PAN,
@@ -11,7 +13,8 @@ import {
 export default function (state, action) {
   switch (action.type) {
     case UPDATE_2D_CAMERA:
-      return state.merge({viewer2D: action.value});
+      //return state;
+      return state.merge({ viewer2D: new Map(action.value) });
 
     case SELECT_TOOL_PAN:
       return state.set('mode', MODE_2D_PAN);

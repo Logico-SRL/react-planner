@@ -142,7 +142,6 @@ var Catalog = function () {
       if (!json.info.hasOwnProperty('image')) throw new Error('Element ' + name + ' doesn\'t have image');
 
       if (!json.hasOwnProperty('render2D')) throw new Error('Element ' + name + ' doesn\'t have render2D handler');
-      if (!json.hasOwnProperty('render3D')) throw new Error('Element ' + name + ' doesn\'t have render3D handler');
       if (!json.hasOwnProperty('properties')) throw new Error('Element ' + name + ' doesn\'t have properties');
 
       for (var propertyName in json.properties) {

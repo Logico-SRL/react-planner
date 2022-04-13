@@ -61,7 +61,7 @@ var ReactPlanner = function (_Component) {
   }, {
     key: 'componentWillMount',
     value: function componentWillMount() {
-      var store = this.context.store;
+      var rootStore = this.props.rootStore;
       var _props = this.props,
           projectActions = _props.projectActions,
           catalog = _props.catalog,
@@ -69,7 +69,7 @@ var ReactPlanner = function (_Component) {
           plugins = _props.plugins;
 
       plugins.forEach(function (plugin) {
-        return plugin(store, stateExtractor);
+        return plugin(rootStore, stateExtractor);
       });
       projectActions.initCatalog(catalog);
     }
@@ -95,7 +95,8 @@ var ReactPlanner = function (_Component) {
           height = _props2.height,
           state = _props2.state,
           stateExtractor = _props2.stateExtractor,
-          props = _objectWithoutProperties(_props2, ['width', 'height', 'state', 'stateExtractor']);
+          rootStore = _props2.rootStore,
+          props = _objectWithoutProperties(_props2, ['width', 'height', 'state', 'stateExtractor', 'rootStore']);
 
       var contentW = width - toolbarW - sidebarW;
       var toolbarH = height - footerBarH;
@@ -161,13 +162,14 @@ ReactPlanner.defaultProps = {
 };
 
 //redux connect
-function mapStateToProps(reduxState) {
-  return {
+function mapStateToProps(reduxState, ownp) {
+  // console.info('mapStateToProps reduxState', reduxState)
+  return _extends({
     state: reduxState
-  };
+  }, ownp);
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, rootStore) {
   return objectsMap(actions, function (actionNamespace) {
     return bindActionCreators(actions[actionNamespace], dispatch);
   });

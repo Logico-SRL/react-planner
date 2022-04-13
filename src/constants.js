@@ -40,9 +40,6 @@ export const SELECT_TOOL_ZOOM_OUT = 'SELECT_TOOL_ZOOM_OUT';
 export const SELECT_TOOL_PAN = 'SELECT_TOOL_PAN';
 export const UPDATE_2D_CAMERA = 'UPDATE_2D_CAMERA';
 
-//ACTIONS viewer3D
-export const SELECT_TOOL_3D_VIEW = 'SELECT_TOOL_3D_VIEW';
-export const SELECT_TOOL_3D_FIRST_PERSON = 'SELECT_TOOL_3D_FIRST_PERSON';
 
 //ACTIONS items
 export const SELECT_TOOL_DRAWING_ITEM = 'SELECT_TOOL_DRAWING_ITEM';
@@ -150,11 +147,6 @@ export const VIEWER2D_ACTIONS = {
   UPDATE_2D_CAMERA
 };
 
-export const VIEWER3D_ACTIONS = {
-  SELECT_TOOL_3D_VIEW,
-  SELECT_TOOL_3D_FIRST_PERSON
-};
-
 export const ITEMS_ACTIONS = {
   SELECT_ITEM,
   SELECT_TOOL_DRAWING_ITEM,
@@ -227,8 +219,6 @@ export const MODE_IDLE = 'MODE_IDLE';
 export const MODE_2D_ZOOM_IN = 'MODE_2D_ZOOM_IN';
 export const MODE_2D_ZOOM_OUT = 'MODE_2D_ZOOM_OUT';
 export const MODE_2D_PAN = 'MODE_2D_PAN';
-export const MODE_3D_VIEW = 'MODE_3D_VIEW';
-export const MODE_3D_FIRST_PERSON = 'MODE_3D_FIRST_PERSON';
 export const MODE_WAITING_DRAWING_LINE = 'MODE_WAITING_DRAWING_LINE';
 export const MODE_DRAGGING_LINE = 'MODE_DRAGGING_LINE';
 export const MODE_DRAGGING_VERTEX = 'MODE_DRAGGING_VERTEX';
@@ -243,33 +233,6 @@ export const MODE_FITTING_IMAGE = 'MODE_FITTING_IMAGE';
 export const MODE_VIEWING_CATALOG = 'MODE_VIEWING_CATALOG';
 export const MODE_CONFIGURING_PROJECT = 'MODE_CONFIGURING_PROJECT';
 
-//Thinking about it...
-//https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Proxy
-/*
-let MODE_DEF = [
-  'IDLE',
-  '2D_ZOOM_IN',
-  '2D_ZOOM_OUT',
-  '2D_PAN',
-  '3D_VIEW',
-  '3D_FIRST_PERSON',
-  'WAITING_DRAWING_LINE',
-  'DRAGGING_LINE',
-  'DRAGGING_VERTEX',
-  'DRAGGING_ITEM',
-  'DRAGGING_HOLE',
-  'DRAWING_LINE',
-  'DRAWING_HOLE',
-  'DRAWING_ITEM',
-  'ROTATING_ITEM',
-  'UPLOADING_IMAGE',
-  'FITTING_IMAGE',
-  'VIEWING_CATALOG',
-  'CONFIGURING_PROJECT',
-];
-
-export const MODE = new Proxy( MODE_DEF, { get: (target, name) => { return target.indexOf(name) !== -1 ? name : null } } );
-*/
 
 export const MODE_SNAPPING = [
   MODE_IDLE, MODE_2D_ZOOM_IN, MODE_2D_ZOOM_OUT, MODE_2D_PAN,

@@ -1,5 +1,4 @@
 import React from 'react';
-import { createArea, updatedArea } from './area-factory-3d';
 import * as SharedStyle from '../../shared-style';
 import Translator from '../../translator/translator';
 
@@ -56,13 +55,6 @@ export default function AreaFactory(name, info, textures) {
       return (<path d={path} fill={fill} />);
     },
 
-    render3D: function (element, layer, scene) {
-      return createArea(element, layer, scene, textures)
-    },
-
-    updateRender3D: (element, layer, scene, mesh, oldElement, differences, selfDestroy, selfBuild) => {
-      return updatedArea(element, layer, scene, textures, mesh, oldElement, differences, selfDestroy, selfBuild);
-    }
 
   };
 

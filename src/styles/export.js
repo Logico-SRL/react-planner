@@ -1,4 +1,6 @@
-import * as TabsStyle from './tabs.css';
+// import * as TabsStyle from './tabs.css';
+
+const TabsStyle = {}
 
 export {
   TabsStyle

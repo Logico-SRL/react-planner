@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Catalog from './catalog/catalog';
 import Translator from './translator/translator';
 import * as Models from './models';

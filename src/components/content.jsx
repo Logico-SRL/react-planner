@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Viewer2D from './viewer2d/viewer2d';
-import Viewer3D from './viewer3d/viewer3d';
-import Viewer3DFirstPerson from './viewer3d/viewer3d-first-person';
 import CatalogList from './catalog-view/catalog-list';
 import ProjectConfigurator from './configurator/project-configurator';
 
@@ -12,12 +10,7 @@ export default function Content({width, height, state, customContents}) {
   let mode = state.get('mode');
 
   switch (mode) {
-    case constants.MODE_3D_VIEW:
-      return <Viewer3D state={state} width={width} height={height}/>;
-
-    case constants.MODE_3D_FIRST_PERSON:
-      return <Viewer3DFirstPerson state={state} width={width} height={height}/>;
-
+    
     case constants.MODE_VIEWING_CATALOG:
       return <CatalogList state={state} width={width} height={height}/>;
 

@@ -2,8 +2,6 @@ export default {
   "+ Add Horizontal Giude": "+ Добавить горизонтальное руководство",
   "+ Add Vertical Giude": "+ Добавить вертикальное руководство",
   "2D View": "Плоский вид",
-  "3D First Person": "3D от первого лица",
-  "3D View": "Объёмный вид",
   "altitude": "высота",
   "Altitude": "Высота",
   "Areas": "Поверхности",

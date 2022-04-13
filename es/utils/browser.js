@@ -2,12 +2,12 @@ export function browserDownload(json) {
   var fileOutputLink = document.createElement('a');
 
   var filename = 'output' + Date.now() + '.json';
-  filename = window.prompt('Insert output filename', filename);
+  if (typeof window != 'undefined') filename = window.prompt('Insert output filename', filename);
   if (!filename) return;
 
   var output = JSON.stringify(json);
   var data = new Blob([output], { type: 'text/plain' });
-  var url = window.URL.createObjectURL(data);
+  var url = typeof window != 'undefined' ? window.URL.createObjectURL(data) : '';
   fileOutputLink.setAttribute('download', filename);
   fileOutputLink.href = url;
   fileOutputLink.style.display = 'none';

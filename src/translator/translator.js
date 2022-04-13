@@ -69,8 +69,8 @@ export default class Translator {
   }
 
   static getBrowserLanguages() {
-    return navigator.languages
+    return typeof navigator != 'undefined' ? (navigator.languages
       ? navigator.languages
-      : [navigator.language || navigator.userLanguage]
+      : [navigator.language || navigator.userLanguage]) : 'it-IT'
   }
 }

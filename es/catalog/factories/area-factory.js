@@ -1,7 +1,6 @@
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 import React from 'react';
-import { createArea, updatedArea } from './area-factory-3d';
 import * as SharedStyle from '../../shared-style';
 import Translator from '../../translator/translator';
 
@@ -54,14 +53,6 @@ export default function AreaFactory(name, info, textures) {
       var fill = element.selected ? SharedStyle.AREA_MESH_COLOR.selected : element.properties.get('patternColor');
 
       return React.createElement('path', { d: path, fill: fill });
-    },
-
-    render3D: function render3D(element, layer, scene) {
-      return createArea(element, layer, scene, textures);
-    },
-
-    updateRender3D: function updateRender3D(element, layer, scene, mesh, oldElement, differences, selfDestroy, selfBuild) {
-      return updatedArea(element, layer, scene, textures, mesh, oldElement, differences, selfDestroy, selfBuild);
     }
 
   };

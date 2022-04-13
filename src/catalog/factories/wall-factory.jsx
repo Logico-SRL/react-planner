@@ -1,5 +1,4 @@
 import React from 'react';
-import { buildWall, updatedWall } from './wall-factory-3d';
 import * as SharedStyle from '../../shared-style';
 import * as Geometry from '../../utils/geometry';
 import Translator from '../../translator/translator';
@@ -58,14 +57,6 @@ export default function WallFactory(name, info, textures) {
         </g> :
         <rect x="0" y={-half_thickness} width={length} height={thickness} style={STYLE_RECT} />
     },
-
-    render3D: function (element, layer, scene) {
-      return buildWall(element, layer, scene, textures);
-    },
-
-    updateRender3D: (element, layer, scene, mesh, oldElement, differences, selfDestroy, selfBuild) => {
-      return updatedWall(element, layer, scene, textures, mesh, oldElement, differences, selfDestroy, selfBuild);
-    }
 
   };
 

@@ -379,7 +379,7 @@ export default function Viewer2D(_ref, _ref2) {
         style: { gridColumn: 2, gridRow: 2 },
         width: width - rulerSize,
         height: height - rulerSize,
-        value: viewer2D.isEmpty() ? null : viewer2D.toJS(),
+        value: viewer2D.isEmpty() ? {} : viewer2D.toJS(),
         onChangeValue: onChangeValue,
         tool: mode2Tool(mode),
         onChangeTool: onChangeTool,
@@ -387,8 +387,13 @@ export default function Viewer2D(_ref, _ref2) {
         onMouseDown: onMouseDown,
         onMouseMove: onMouseMove,
         onMouseUp: onMouseUp,
-        miniaturePosition: 'none',
-        toolbarPosition: 'none'
+        toolbarProps: {
+          toolbarPosition: "none"
+        },
+        miniatureProps: {
+          miniaturePosition: "none"
+        }
+
       },
       React.createElement(
         'svg',

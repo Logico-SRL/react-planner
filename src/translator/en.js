@@ -2,8 +2,6 @@ export default {
   "+ Add Horizontal Giude":"+ Add Horizontal Giude",
   "+ Add Vertical Giude":"+ Add Vertical Giude",
   "2D View": "2D View",
-  "3D First Person": "3D First Person",
-  "3D View": "3D View",
   "altitude": "altitude",
   "Altitude": "Altitude",
   "Areas":"Areas",
