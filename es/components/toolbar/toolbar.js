@@ -129,18 +129,16 @@ var Toolbar = function (_Component) {
             } },
           React.createElement(FaPlus, null)
         )
-      }, {
-        index: 5, condition: true, dom: React.createElement(
-          ToolbarButton,
-          {
-            active: [MODE_IDLE].includes(mode),
-            tooltip: translator.t('2D View'),
-            onClick: function onClick(event) {
-              return projectActions.setMode(MODE_IDLE);
-            } },
-          React.createElement(Icon2D, { style: { color: alterateColor } })
-        )
-      }, {
+      },
+      // {
+      //   index: 5, condition: true, dom: <ToolbarButton
+      //     active={[MODE_IDLE].includes(mode)}
+      //     tooltip={translator.t('2D View')}
+      //     onClick={event => projectActions.setMode( MODE_IDLE )}>
+      //     <Icon2D style={{color: alterateColor}} />
+      //   </ToolbarButton>
+      // },
+      {
         index: 7, condition: true, dom: React.createElement(
           ToolbarButton,
           {

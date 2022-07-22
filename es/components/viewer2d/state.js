@@ -18,7 +18,8 @@ export default function State(_ref) {
       snapElements = state.snapElements,
       scene = state.scene;
   var width = scene.width,
-      height = scene.height;
+      height = scene.height,
+      code = scene.code;
 
 
   activeSnapElement = activeSnapElement ? React.createElement(Snap, { snap: activeSnapElement, width: scene.width, height: scene.height }) : null;
