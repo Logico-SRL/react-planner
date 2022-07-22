@@ -10,6 +10,8 @@ export default function ToolbarSaveButton({state}, {translator}) {
   let saveProjectToFile = e => {
     e.preventDefault();
     state = Project.unselectAll( state ).updatedState;
+    console.log("saveProjectToFile state:", state)
+    console.log("saveProjectToFile scene:", state.get('scene').toJS())
     browserDownload(state.get('scene').toJS());
   };
 

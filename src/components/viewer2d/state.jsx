@@ -12,7 +12,7 @@ const guideStyle = {
 export default function State({state, catalog}) {
 
   let {activeSnapElement, snapElements, scene} = state;
-  let {width, height} = scene;
+  let {width, height, code} = scene;
 
   activeSnapElement = activeSnapElement ?
     <Snap snap={activeSnapElement} width={scene.width} height={scene.height}/> : null;

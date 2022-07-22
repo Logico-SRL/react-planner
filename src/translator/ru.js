@@ -73,5 +73,6 @@ export default {
   "width": "ширина",
   "Would you want to start a new Project?": "Начать новый проект?",
   "Zoom in": "Приблизить",
-  "Zoom out": "Отдалить"
+  "Zoom out": "Отдалить",
+  "Project Code": "Project Code (ru)",
 };

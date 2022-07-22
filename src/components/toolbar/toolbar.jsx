@@ -103,14 +103,14 @@ export default class Toolbar extends Component {
           <FaPlus />
         </ToolbarButton>
       },
-      {
-        index: 5, condition: true, dom: <ToolbarButton
-          active={[MODE_IDLE].includes(mode)}
-          tooltip={translator.t('2D View')}
-          onClick={event => projectActions.setMode( MODE_IDLE )}>
-          <Icon2D style={{color: alterateColor}} />
-        </ToolbarButton>
-      },
+      // {
+      //   index: 5, condition: true, dom: <ToolbarButton
+      //     active={[MODE_IDLE].includes(mode)}
+      //     tooltip={translator.t('2D View')}
+      //     onClick={event => projectActions.setMode( MODE_IDLE )}>
+      //     <Icon2D style={{color: alterateColor}} />
+      //   </ToolbarButton>
+      // },
       {
         index: 7, condition: true, dom: <ToolbarButton
           active={false}
