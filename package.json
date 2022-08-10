@@ -1,6 +1,6 @@
 {
   "name": "react-planner",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "react-planner is a React Component for plans design. Draw a 2D floorplan and navigate it in 3D mode.",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -12,7 +12,8 @@
     "update-version-file": "const-version ./package.json ./src/version.js",
     "version": "npm run update-version-file && npm run build && npm run add-build-to-vcs",
     "postpublish": "npm run website-update",
-    "add-build-to-vcs": "git add -A src/version.js && git add -A es && git add -A lib && git add -A demo/dist",
+    "add-build-to-vcs": "git add -A src/version.js && git add -A es && git add -A lib ",
+    "add-build-to-vcs-original": "git add -A src/version.js && git add -A es && git add -A lib && git add -A demo/dist",
     "clean": "npx rimraf lib es"
   },
   "repository": {
