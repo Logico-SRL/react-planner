@@ -101,7 +101,9 @@ var Toolbar = function (_Component) {
       var alterateColor = alterate ? SharedStyle.MATERIAL_COLORS[500].orange : '';
 
       var sorter = [{
-        index: 0, condition: allowProjectFileSupport, dom: React.createElement(
+        index: 0,
+        condition: allowProjectFileSupport,
+        dom: React.createElement(
           ToolbarButton,
           {
             active: false,
@@ -112,10 +114,12 @@ var Toolbar = function (_Component) {
           React.createElement(FaFile, null)
         )
       }, {
-        index: 1, condition: allowProjectFileSupport,
+        index: 1,
+        condition: allowProjectFileSupport,
         dom: React.createElement(ToolbarSaveButton, { state: state })
       }, {
-        index: 2, condition: allowProjectFileSupport,
+        index: 2,
+        condition: allowProjectFileSupport,
         dom: React.createElement(ToolbarLoadButton, { state: state })
       }, {
         index: 3, condition: true,
@@ -129,16 +133,18 @@ var Toolbar = function (_Component) {
             } },
           React.createElement(FaPlus, null)
         )
-      },
-      // {
-      //   index: 5, condition: true, dom: <ToolbarButton
-      //     active={[MODE_IDLE].includes(mode)}
-      //     tooltip={translator.t('2D View')}
-      //     onClick={event => projectActions.setMode( MODE_IDLE )}>
-      //     <Icon2D style={{color: alterateColor}} />
-      //   </ToolbarButton>
-      // },
-      {
+      }, {
+        index: 5, condition: true, dom: React.createElement(
+          ToolbarButton,
+          {
+            active: [MODE_IDLE].includes(mode),
+            tooltip: translator.t('2D View'),
+            onClick: function onClick(event) {
+              return projectActions.setMode(MODE_IDLE);
+            } },
+          React.createElement(Icon2D, { style: { color: alterateColor } })
+        )
+      }, {
         index: 7, condition: true, dom: React.createElement(
           ToolbarButton,
           {

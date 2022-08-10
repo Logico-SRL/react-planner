@@ -21,7 +21,7 @@ const iconTextStyle = {
   userSelect: 'none'
 };
 
-const Icon2D = ( {style} ) => <p style={{...iconTextStyle, ...style}}>2D</p>;
+const Icon2D = ({ style }) => <p style={{ ...iconTextStyle, ...style }}>2D</p>;
 
 const ASIDE_STYLE = {
   backgroundColor: SharedStyle.PRIMARY_COLOR.main,
@@ -70,7 +70,7 @@ export default class Toolbar extends Component {
 
     let {
       props: { state, width, height, toolbarButtons, allowProjectFileSupport },
-      context: { projectActions,  translator }
+      context: { projectActions, translator }
     } = this;
 
     let mode = state.get('mode');
@@ -79,7 +79,9 @@ export default class Toolbar extends Component {
 
     let sorter = [
       {
-        index: 0, condition: allowProjectFileSupport, dom: <ToolbarButton
+        index: 0,
+        condition: allowProjectFileSupport,
+        dom: <ToolbarButton
           active={false}
           tooltip={translator.t('New project')}
           onClick={event => confirm(translator.t('Would you want to start a new Project?')) ? projectActions.newProject() : null}>
@@ -87,11 +89,13 @@ export default class Toolbar extends Component {
         </ToolbarButton>
       },
       {
-        index: 1, condition: allowProjectFileSupport,
+        index: 1,
+        condition: allowProjectFileSupport,
         dom: <ToolbarSaveButton state={state} />
       },
       {
-        index: 2, condition: allowProjectFileSupport,
+        index: 2,
+        condition: allowProjectFileSupport,
         dom: <ToolbarLoadButton state={state} />
       },
       {
@@ -103,14 +107,14 @@ export default class Toolbar extends Component {
           <FaPlus />
         </ToolbarButton>
       },
-      // {
-      //   index: 5, condition: true, dom: <ToolbarButton
-      //     active={[MODE_IDLE].includes(mode)}
-      //     tooltip={translator.t('2D View')}
-      //     onClick={event => projectActions.setMode( MODE_IDLE )}>
-      //     <Icon2D style={{color: alterateColor}} />
-      //   </ToolbarButton>
-      // },
+      {
+        index: 5, condition: true, dom: <ToolbarButton
+          active={[MODE_IDLE].includes(mode)}
+          tooltip={translator.t('2D View')}
+          onClick={event => projectActions.setMode(MODE_IDLE)}>
+          <Icon2D style={{ color: alterateColor }} />
+        </ToolbarButton>
+      },
       {
         index: 7, condition: true, dom: <ToolbarButton
           active={false}
