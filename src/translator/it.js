@@ -35,7 +35,7 @@ export default {
   "Layers": "Livelli",
   "Length":"Lunghezza",
   "Lines":"Linee",
-  "Load project": "Carica locale",
+  "Load project": "Carica MIO locale",
   "Mouse X Coordinate":"Coordinata X del Mouse",
   "Mouse Y Coordinate":"Coordinata Y del Mouse",
   "Name" : "Nome",
