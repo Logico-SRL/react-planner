@@ -29,36 +29,42 @@ export default function Item(_ref) {
       rotation = item.rotation;
 
 
-  var renderedItem = catalog.getElement(item.type).render2D(item, layer, scene);
+  try {
 
-  return React.createElement(
-    'g',
-    {
-      'data-element-root': true,
-      'data-prototype': item.prototype,
-      'data-id': item.id,
-      'data-selected': item.selected,
-      'data-layer': layer.id,
-      style: item.selected ? { cursor: "move" } : {},
-      transform: 'translate(' + x + ',' + y + ') rotate(' + rotation + ')' },
-    renderedItem,
-    React.createElement(
-      If,
-      { condition: item.selected },
+    var renderedItem = catalog.getElement(item.type).render2D(item, layer, scene);
+
+    return React.createElement(
+      'g',
+      {
+        'data-element-root': true,
+        'data-prototype': item.prototype,
+        'data-id': item.id,
+        'data-selected': item.selected,
+        'data-layer': layer.id,
+        style: item.selected ? { cursor: "move" } : {},
+        transform: 'translate(' + x + ',' + y + ') rotate(' + rotation + ')' },
+      renderedItem,
       React.createElement(
-        'g',
-        { 'data-element-root': true,
-          'data-prototype': item.prototype,
-          'data-id': item.id,
-          'data-selected': item.selected,
-          'data-layer': layer.id,
-          'data-part': 'rotation-anchor'
-        },
-        React.createElement('circle', { cx: '0', cy: '150', r: '10', style: STYLE_CIRCLE }),
-        React.createElement('circle', { cx: '0', cy: '0', r: '150', style: STYLE_CIRCLE2 })
+        If,
+        { condition: item.selected },
+        React.createElement(
+          'g',
+          { 'data-element-root': true,
+            'data-prototype': item.prototype,
+            'data-id': item.id,
+            'data-selected': item.selected,
+            'data-layer': layer.id,
+            'data-part': 'rotation-anchor'
+          },
+          React.createElement('circle', { cx: '0', cy: '150', r: '10', style: STYLE_CIRCLE }),
+          React.createElement('circle', { cx: '0', cy: '0', r: '150', style: STYLE_CIRCLE2 })
+        )
       )
-    )
-  );
+    );
+  } catch (error) {
+
+    return null;
+  }
 }
 
 Item.propTypes = {
