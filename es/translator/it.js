@@ -74,5 +74,6 @@ export default {
   "Would you want to start a new Project?": "Vuoi disegnare un nuovo planner?",
   "Zoom in": "Ingrandisci",
   "Zoom out": "Riduci",
-  "Project Code": "Codice planner"
+  "Project Code": "Codice planner",
+  "Project Scope": "Ambito"
 };

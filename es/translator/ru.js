@@ -74,5 +74,6 @@ export default {
   "Would you want to start a new Project?": "Начать новый проект?",
   "Zoom in": "Приблизить",
   "Zoom out": "Отдалить",
-  "Project Code": "Project Code (ru)"
+  "Project Code": "Project Code (ru)",
+  "Project Scope": "Project Scope (ru)"
 };

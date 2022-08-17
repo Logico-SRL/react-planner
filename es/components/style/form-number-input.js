@@ -51,6 +51,7 @@ var FormNumberInput = function (_Component) {
     _this.state = {
       focus: false,
       valid: true,
+      readonly: false,
       showedValue: props.value
     };
     return _this;
@@ -77,7 +78,8 @@ var FormNumberInput = function (_Component) {
           onValid = _props.onValid,
           onInvalid = _props.onInvalid,
           style = _props.style,
-          placeholder = _props.placeholder;
+          placeholder = _props.placeholder,
+          readonly = _props.readonly;
 
       var numericInputStyle = _extends({}, STYLE_INPUT, style);
 
@@ -108,6 +110,7 @@ var FormNumberInput = function (_Component) {
         { style: { position: 'relative' } },
         React.createElement('input', {
           type: 'text',
+          readOnly: readonly,
           value: currValue,
           style: numericInputStyle,
           onChange: function onChange(evt) {
@@ -166,7 +169,8 @@ FormNumberInput.propTypes = {
   min: PropTypes.number,
   max: PropTypes.number,
   precision: PropTypes.number,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  readonly: PropTypes.bool
 };
 
 FormNumberInput.contextTypes = {

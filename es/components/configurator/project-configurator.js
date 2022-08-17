@@ -120,11 +120,30 @@ var ProjectConfigurator = function (_Component) {
               translator.t('Project Code')
             ),
             React.createElement(FormNumberInput, {
+              readonly: true,
               id: 'drawcode',
-              placeholder: 'codice',
+              placeholder: 'codice planner',
               value: dataCode,
               onChange: function onChange(e) {
                 return _this2.setState({ dataCode: e.target.value });
+              }
+            })
+          ),
+          React.createElement(
+            FormBlock,
+            null,
+            React.createElement(
+              FormLabel,
+              { htmlFor: 'scope' },
+              translator.t('Project Scope')
+            ),
+            React.createElement(FormNumberInput, {
+              readonly: true,
+              id: 'scope',
+              placeholder: 'ambito',
+              value: dataScope,
+              onChange: function onChange(e) {
+                return _this2.setState({ dataScope: e.target.value });
               }
             })
           ),
