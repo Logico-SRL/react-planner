@@ -20,16 +20,19 @@ export default class FormTextInput extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { focus: false };
+    this.state = {
+      focus: false,
+    };
   }
 
   render() {
-    let { style, ...rest } = this.props;
+    let { readonly, style, ...rest } = this.props;
 
     let textInputStyle = { ...STYLE_INPUT, ...style };
     if (this.state.focus) textInputStyle.border = `1px solid ${SharedStyle.SECONDARY_COLOR.main}`;
 
     return <input
+      readOnly={readonly}
       onFocus={e => this.setState({ focus: true })}
       onBlur={e => this.setState({ focus: false })}
       style={textInputStyle}

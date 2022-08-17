@@ -37,7 +37,6 @@ export default class FormNumberInput extends Component {
     this.state = {
       focus: false,
       valid: true,
-      readonly: false,
       showedValue: props.value
     };
   }

@@ -73,7 +73,7 @@ export default class ProjectConfigurator extends Component {
 
           <FormBlock>
             <FormLabel htmlFor='drawcode'>{translator.t('Project Code')}</FormLabel>
-            <FormNumberInput
+            <FormTextInput
               readonly={true}
               id='drawcode'
               placeholder='codice planner'
@@ -84,7 +84,7 @@ export default class ProjectConfigurator extends Component {
 
           <FormBlock>
             <FormLabel htmlFor='scope'>{translator.t('Project Scope')}</FormLabel>
-            <FormNumberInput
+            <FormTextInput
               readonly={true}
               id='scope'
               placeholder='ambito'
