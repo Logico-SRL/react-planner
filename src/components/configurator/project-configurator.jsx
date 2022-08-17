@@ -6,6 +6,7 @@ import {
   FormLabel,
   FormBlock,
   FormNumberInput,
+  FormTextInput,
   FormSubmitButton,
   CancelButton
 } from '../style/export';
