@@ -122,7 +122,7 @@ var ProjectConfigurator = function (_Component) {
               { htmlFor: 'drawcode' },
               translator.t('Project Code')
             ),
-            React.createElement(FormNumberInput, {
+            React.createElement(FormTextInput, {
               readonly: true,
               id: 'drawcode',
               placeholder: 'codice planner',
@@ -140,7 +140,7 @@ var ProjectConfigurator = function (_Component) {
               { htmlFor: 'scope' },
               translator.t('Project Scope')
             ),
-            React.createElement(FormNumberInput, {
+            React.createElement(FormTextInput, {
               readonly: true,
               id: 'scope',
               placeholder: 'ambito',

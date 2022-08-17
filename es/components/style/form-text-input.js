@@ -35,7 +35,9 @@ var FormTextInput = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (FormTextInput.__proto__ || Object.getPrototypeOf(FormTextInput)).call(this, props));
 
-    _this.state = { focus: false };
+    _this.state = {
+      focus: false
+    };
     return _this;
   }
 
@@ -45,13 +47,15 @@ var FormTextInput = function (_Component) {
       var _this2 = this;
 
       var _props = this.props,
+          readonly = _props.readonly,
           style = _props.style,
-          rest = _objectWithoutProperties(_props, ['style']);
+          rest = _objectWithoutProperties(_props, ['readonly', 'style']);
 
       var textInputStyle = _extends({}, STYLE_INPUT, style);
       if (this.state.focus) textInputStyle.border = '1px solid ' + SharedStyle.SECONDARY_COLOR.main;
 
       return React.createElement('input', _extends({
+        readOnly: readonly,
         onFocus: function onFocus(e) {
           return _this2.setState({ focus: true });
         },

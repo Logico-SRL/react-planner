@@ -51,7 +51,6 @@ var FormNumberInput = function (_Component) {
     _this.state = {
       focus: false,
       valid: true,
-      readonly: false,
       showedValue: props.value
     };
     return _this;
