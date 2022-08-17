@@ -277,6 +277,8 @@ export var Scene = function (_Record10) {
       selectedLayer: layers.first().id,
       groups: safeLoadMapList(json.groups || {}, Group),
       meta: json.meta ? fromJS(json.meta) : new Map(),
+      drawcode: json.drawcode ? fromJS(json.drawcode) : '',
+      scope: json.scope ? fromJS(json.scope) : '',
       guides: json.guides ? fromJS(json.guides) : new Map({ horizontal: new Map(), vertical: new Map(), circular: new Map() })
     })));
   }
