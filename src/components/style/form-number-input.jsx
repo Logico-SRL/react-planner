@@ -37,6 +37,7 @@ export default class FormNumberInput extends Component {
     this.state = {
       focus: false,
       valid: true,
+      readonly: false,
       showedValue: props.value
     };
   }
@@ -49,7 +50,7 @@ export default class FormNumberInput extends Component {
 
   render() {
 
-    let { value, min, max, precision, onChange, onValid, onInvalid, style, placeholder } = this.props;
+    let { value, min, max, precision, onChange, onValid, onInvalid, style, placeholder, readonly } = this.props;
     let numericInputStyle = { ...STYLE_INPUT, ...style };
 
     if (this.state.focus) numericInputStyle.border = `1px solid ${SharedStyle.SECONDARY_COLOR.main}`;
@@ -78,6 +79,7 @@ export default class FormNumberInput extends Component {
       <div style={{ position: 'relative' }}>
         <input
           type="text"
+          readOnly={readonly}
           value={currValue}
           style={numericInputStyle}
           onChange={(evt) => {
@@ -124,7 +126,8 @@ FormNumberInput.propTypes = {
   min: PropTypes.number,
   max: PropTypes.number,
   precision: PropTypes.number,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  readonly: PropTypes.bool,
 };
 
 FormNumberInput.contextTypes = {

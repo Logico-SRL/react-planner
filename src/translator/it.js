@@ -75,4 +75,5 @@ export default {
   "Zoom in": "Ingrandisci",
   "Zoom out": "Riduci",
   "Project Code": "Codice planner",
+  "Project Scope":"Ambito"
 };

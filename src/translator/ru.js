@@ -75,4 +75,5 @@ export default {
   "Zoom in": "Приблизить",
   "Zoom out": "Отдалить",
   "Project Code": "Project Code (ru)",
+  "Project Scope":"Project Scope (ru)"
 };

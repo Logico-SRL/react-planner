@@ -75,4 +75,5 @@ export default {
   "Zoom in": "Zoom in",
   "Zoom out": "Zoom out",
   "Project Code": "Project code",
+  "Project Scope":"Project Scope"
 };

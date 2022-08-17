@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   ContentTitle,
@@ -27,23 +27,23 @@ export default class ProjectConfigurator extends Component {
   onSubmit(event) {
     event.preventDefault();
 
-    let {projectActions} = this.context;
+    let { projectActions } = this.context;
 
-    let {dataWidth, dataHeight, dataCode} = this.state;
+    let { dataWidth, dataHeight, dataCode } = this.state;
     dataWidth = parseInt(dataWidth);
     dataHeight = parseInt(dataHeight);
     if (dataWidth <= 100 || dataHeight <= 100) {
       alert('Scene size too small');
     } else {
-      projectActions.setProjectProperties({width: dataWidth, height: dataHeight, drawcode: dataCode});
+      projectActions.setProjectProperties({ width: dataWidth, height: dataHeight, drawcode: dataCode });
     }
   }
 
 
   render() {
-    let {width, height} = this.props;
-    let {dataWidth, dataHeight, dataCode} = this.state;
-    let {projectActions, translator} = this.context;
+    let { width, height } = this.props;
+    let { dataWidth, dataHeight, dataCode } = this.state;
+    let { projectActions, translator } = this.context;
 
     return (
       <ContentContainer width={width} height={height}>
@@ -56,7 +56,7 @@ export default class ProjectConfigurator extends Component {
               id='width'
               placeholder='width'
               value={dataWidth}
-              onChange={e => this.setState({dataWidth: e.target.value})}
+              onChange={e => this.setState({ dataWidth: e.target.value })}
             />
           </FormBlock>
 
@@ -66,31 +66,44 @@ export default class ProjectConfigurator extends Component {
               id='height'
               placeholder='height'
               value={dataHeight}
-              onChange={e => this.setState({dataHeight: e.target.value})}
+              onChange={e => this.setState({ dataHeight: e.target.value })}
             />
           </FormBlock>
 
           <FormBlock>
             <FormLabel htmlFor='drawcode'>{translator.t('Project Code')}</FormLabel>
             <FormNumberInput
+              readonly={true}
               id='drawcode'
-              placeholder='codice'
+              placeholder='codice planner'
               value={dataCode}
-              onChange={e => this.setState({dataCode: e.target.value})}
+              onChange={e => this.setState({ dataCode: e.target.value })}
             />
           </FormBlock>
 
-          <table style={{float: 'right'}}>
+          <FormBlock>
+            <FormLabel htmlFor='scope'>{translator.t('Project Scope')}</FormLabel>
+            <FormNumberInput
+              readonly={true}
+              id='scope'
+              placeholder='ambito'
+              value={dataScope}
+              onChange={e => this.setState({ dataScope: e.target.value })}
+            />
+          </FormBlock>
+
+
+          <table style={{ float: 'right' }}>
             <tbody>
-            <tr>
-              <td>
-                <CancelButton size='large'
-                              onClick={e => projectActions.rollback()}>{translator.t('Cancel')}</CancelButton>
-              </td>
-              <td>
-                <FormSubmitButton size='large'>{translator.t('Save')}</FormSubmitButton>
-              </td>
-            </tr>
+              <tr>
+                <td>
+                  <CancelButton size='large'
+                    onClick={e => projectActions.rollback()}>{translator.t('Cancel')}</CancelButton>
+                </td>
+                <td>
+                  <FormSubmitButton size='large'>{translator.t('Save')}</FormSubmitButton>
+                </td>
+              </tr>
             </tbody>
           </table>
         </form>
