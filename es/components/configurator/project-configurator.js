@@ -8,7 +8,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ContentTitle, ContentContainer, FormLabel, FormBlock, FormNumberInput, FormSubmitButton, CancelButton } from '../style/export';
+import { ContentTitle, ContentContainer, FormLabel, FormBlock, FormNumberInput, FormTextInput, FormSubmitButton, CancelButton } from '../style/export';
 
 var ProjectConfigurator = function (_Component) {
   _inherits(ProjectConfigurator, _Component);
