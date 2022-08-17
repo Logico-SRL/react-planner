@@ -41,7 +41,7 @@ export default class Catalog {
     if (this.hasElement(type)) {
       return this.elements[type];
     }
-    throw new Error(`Element ${type} does not exist in catalog`);
+    throw new Error(`Element ${type} does not exist in catalog`); 
   }
 
   /** @description Get catalog category
