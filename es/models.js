@@ -290,6 +290,8 @@ export var Scene = function (_Record10) {
   groups: new Map(),
   width: 3000,
   height: 2000,
+  drawcode: '',
+  scope: '',
   meta: new Map(), //additional info
   guides: new Map()
 }, 'Scene'));

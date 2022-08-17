@@ -61,8 +61,9 @@ export default function Sidebar(_ref) {
   var sorter = [
   // { index: 0, condition: true, dom: <PanelGuides state={state}/> },
   // { index: 1, condition: true, dom: <PanelLayers state={state} /> },
-  // { index: 2, condition: true, dom: <PanelLayerElements mode={state.mode} layers={state.scene.layers} selectedLayer={state.scene.selectedLayer} /> },
-  { index: 3, condition: true, dom: React.createElement(PanelGroups, { mode: state.mode, groups: state.scene.groups, layers: state.scene.layers }) }, { index: 4, condition: !multiselected, dom: React.createElement(PanelElementEditor, { state: state }) }];
+  { index: 2, condition: true, dom: React.createElement(PanelLayerElements, { mode: state.mode, layers: state.scene.layers, selectedLayer: state.scene.selectedLayer }) },
+  // { index: 3, condition: true, dom: <PanelGroups mode={state.mode} groups={state.scene.groups} layers={state.scene.layers} /> },
+  { index: 4, condition: !multiselected, dom: React.createElement(PanelElementEditor, { state: state }) }];
 
   sorter = sorter.concat(sidebarComponents.map(function (Component, key) {
     return Component.prototype ? //if is a react component
