@@ -20,7 +20,7 @@ export default class ProjectConfigurator extends Component {
     this.state = {
       dataWidth: scene.width,
       dataHeight: scene.height,
-      dataCode: scene.code,
+      dataCode: scene.drawcode,
     };
   }
 
@@ -35,14 +35,14 @@ export default class ProjectConfigurator extends Component {
     if (dataWidth <= 100 || dataHeight <= 100) {
       alert('Scene size too small');
     } else {
-      projectActions.setProjectProperties({width: dataWidth, height: dataHeight, code: dataCode});
+      projectActions.setProjectProperties({width: dataWidth, height: dataHeight, drawcode: dataCode});
     }
   }
 
 
   render() {
     let {width, height} = this.props;
-    let {dataWidth, dataHeight} = this.state;
+    let {dataWidth, dataHeight, dataCode} = this.state;
     let {projectActions, translator} = this.context;
 
     return (
@@ -71,10 +71,10 @@ export default class ProjectConfigurator extends Component {
           </FormBlock>
 
           <FormBlock>
-            <FormLabel htmlFor='code'>{translator.t('Project Code')}</FormLabel>
+            <FormLabel htmlFor='drawcode'>{translator.t('Project Code')}</FormLabel>
             <FormNumberInput
-              id='code'
-              placeholder='code'
+              id='drawcode'
+              placeholder='codice'
               value={dataCode}
               onChange={e => this.setState({dataCode: e.target.value})}
             />
