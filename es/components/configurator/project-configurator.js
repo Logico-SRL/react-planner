@@ -23,7 +23,7 @@ var ProjectConfigurator = function (_Component) {
     _this.state = {
       dataWidth: scene.width,
       dataHeight: scene.height,
-      dataCode: scene.code
+      dataCode: scene.drawcode
     };
     return _this;
   }
@@ -44,7 +44,7 @@ var ProjectConfigurator = function (_Component) {
       if (dataWidth <= 100 || dataHeight <= 100) {
         alert('Scene size too small');
       } else {
-        projectActions.setProjectProperties({ width: dataWidth, height: dataHeight, code: dataCode });
+        projectActions.setProjectProperties({ width: dataWidth, height: dataHeight, drawcode: dataCode });
       }
     }
   }, {
@@ -57,7 +57,8 @@ var ProjectConfigurator = function (_Component) {
           height = _props.height;
       var _state2 = this.state,
           dataWidth = _state2.dataWidth,
-          dataHeight = _state2.dataHeight;
+          dataHeight = _state2.dataHeight,
+          dataCode = _state2.dataCode;
       var _context = this.context,
           projectActions = _context.projectActions,
           translator = _context.translator;
@@ -115,12 +116,12 @@ var ProjectConfigurator = function (_Component) {
             null,
             React.createElement(
               FormLabel,
-              { htmlFor: 'code' },
+              { htmlFor: 'drawcode' },
               translator.t('Project Code')
             ),
             React.createElement(FormNumberInput, {
-              id: 'code',
-              placeholder: 'code',
+              id: 'drawcode',
+              placeholder: 'codice',
               value: dataCode,
               onChange: function onChange(e) {
                 return _this2.setState({ dataCode: e.target.value });
