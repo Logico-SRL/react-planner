@@ -21,6 +21,7 @@ export default class ProjectConfigurator extends Component {
       dataWidth: scene.width,
       dataHeight: scene.height,
       dataCode: scene.drawcode,
+      dataScope: scene.scope,
     };
   }
 
@@ -29,20 +30,20 @@ export default class ProjectConfigurator extends Component {
 
     let { projectActions } = this.context;
 
-    let { dataWidth, dataHeight, dataCode } = this.state;
+    let { dataWidth, dataHeight, dataCode, dataScope } = this.state;
     dataWidth = parseInt(dataWidth);
     dataHeight = parseInt(dataHeight);
     if (dataWidth <= 100 || dataHeight <= 100) {
       alert('Scene size too small');
     } else {
-      projectActions.setProjectProperties({ width: dataWidth, height: dataHeight, drawcode: dataCode });
+      projectActions.setProjectProperties({ width: dataWidth, height: dataHeight, drawcode: dataCode, scope: dataScope });
     }
   }
 
 
   render() {
     let { width, height } = this.props;
-    let { dataWidth, dataHeight, dataCode } = this.state;
+    let { dataWidth, dataHeight, dataCode, dataScope } = this.state;
     let { projectActions, translator } = this.context;
 
     return (
