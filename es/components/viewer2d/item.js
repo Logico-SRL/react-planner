@@ -30,7 +30,7 @@ export default function Item(_ref) {
 
 
   try {
-
+    console.log("catalog.getElement:", item.type);
     var renderedItem = catalog.getElement(item.type).render2D(item, layer, scene);
 
     return React.createElement(
@@ -63,7 +63,7 @@ export default function Item(_ref) {
     );
   } catch (error) {
 
-    return null;
+    return React.createElement('g', null);
   }
 }
 

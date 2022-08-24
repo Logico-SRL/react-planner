@@ -86,7 +86,7 @@ var STYLE_PLUS_HOVER = {
 
 var STYLE_DESCRIPTION = (_STYLE_DESCRIPTION = {
   display: 'block'
-}, _defineProperty(_STYLE_DESCRIPTION, 'display', '-webkit-box'), _defineProperty(_STYLE_DESCRIPTION, 'height', '2em'), _defineProperty(_STYLE_DESCRIPTION, 'margin', '0 auto'), _defineProperty(_STYLE_DESCRIPTION, 'fontSize', '0.75em'), _defineProperty(_STYLE_DESCRIPTION, 'fontStyle', 'italic'), _defineProperty(_STYLE_DESCRIPTION, 'lineHeight', '1em'), _defineProperty(_STYLE_DESCRIPTION, 'WebkitLineClamp', '2'), _defineProperty(_STYLE_DESCRIPTION, 'WebkitBoxOrient', 'vertical'), _defineProperty(_STYLE_DESCRIPTION, 'overflow', 'hidden'), _defineProperty(_STYLE_DESCRIPTION, 'textOverflow', 'ellipsis'), _STYLE_DESCRIPTION);
+}, _defineProperty(_STYLE_DESCRIPTION, 'display', '-webkit-box'), _defineProperty(_STYLE_DESCRIPTION, 'height', '2em'), _defineProperty(_STYLE_DESCRIPTION, 'margin', '0 auto'), _defineProperty(_STYLE_DESCRIPTION, 'fontSize', '0.75em'), _defineProperty(_STYLE_DESCRIPTION, 'fontStyle', 'italic'), _defineProperty(_STYLE_DESCRIPTION, 'lineHeight', '1em'), _defineProperty(_STYLE_DESCRIPTION, 'WebkitLineClamp', '2'), _defineProperty(_STYLE_DESCRIPTION, 'WebkitBoxOrient', 'vertical'), _defineProperty(_STYLE_DESCRIPTION, 'overflow', 'hidden'), _defineProperty(_STYLE_DESCRIPTION, 'textOverflow', 'ellipsis'), _defineProperty(_STYLE_DESCRIPTION, 'color', rgb(46, 47, 51)), _STYLE_DESCRIPTION);
 
 var STYLE_TAGS = {
   listStyle: 'none',
@@ -173,6 +173,11 @@ var CatalogItem = function (_Component) {
           )
         ),
         React.createElement(
+          'div',
+          { style: STYLE_DESCRIPTION },
+          element.info.description
+        ),
+        React.createElement(
           'ul',
           { style: STYLE_TAGS },
           element.info.tag.map(function (tag, index) {
@@ -182,11 +187,6 @@ var CatalogItem = function (_Component) {
               tag
             );
           })
-        ),
-        React.createElement(
-          'div',
-          { style: STYLE_DESCRIPTION },
-          element.info.description
         )
       );
     }
