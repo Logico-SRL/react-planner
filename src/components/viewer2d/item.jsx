@@ -24,7 +24,7 @@ export default function Item({ layer, item, scene, catalog }) {
   let { x, y, rotation } = item;
 
   try {
-
+    console.log("catalog.getElement:", item.type)
     let renderedItem = catalog.getElement(item.type).render2D(item, layer, scene);
 
     return (
@@ -38,6 +38,7 @@ export default function Item({ layer, item, scene, catalog }) {
         transform={`translate(${x},${y}) rotate(${rotation})`}>
 
         {renderedItem}
+        
         <If condition={item.selected}>
           <g data-element-root
             data-prototype={item.prototype}
@@ -55,7 +56,7 @@ export default function Item({ layer, item, scene, catalog }) {
 
   } catch (error) {
 
-    return null
+    return (<g></g>)
 
   }
 

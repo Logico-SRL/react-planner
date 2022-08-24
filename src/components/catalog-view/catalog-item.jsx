@@ -85,6 +85,7 @@ const STYLE_DESCRIPTION = {
   WebkitBoxOrient: 'vertical',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
+  color: rgb(46, 47, 51),
 };
 
 const STYLE_TAGS = {
@@ -146,10 +147,10 @@ export default class CatalogItem extends Component {
             { hover ? <IconAdd style={STYLE_PLUS_HOVER} /> : null }
           </div>
         </div>
+        <div style={STYLE_DESCRIPTION}>{element.info.description}</div>
         <ul style={STYLE_TAGS}>
           {element.info.tag.map((tag, index) => <li style={STYLE_TAG} key={index}>{tag}</li>)}
         </ul>
-        <div style={STYLE_DESCRIPTION}>{element.info.description}</div>
       </div>
     );
   }

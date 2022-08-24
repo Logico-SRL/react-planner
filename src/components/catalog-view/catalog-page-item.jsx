@@ -32,14 +32,15 @@ const STYLE_TITLE = {
   marginBottom: '.5em',
   padding:'1em',
   textTransform: 'capitalize',
-  WebkitTransition: 'all .15s ease-in-out'
+  WebkitTransition: 'all .15s ease-in-out',
+  color: rgb(46, 47, 51),
 };
 
 const STYLE_TITLE_HOVERED = {
   ...STYLE_TITLE,
   fontSize: '1.4em',
   transform: 'translateY(-60px)',
-  color:'rgb(28, 166, 252)',
+  color:'rgb(28, 166, 252)', // HOVER on element
   marginTop:'0.5em'
 };
 
