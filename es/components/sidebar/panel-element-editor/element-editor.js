@@ -159,12 +159,13 @@ var ElementEditor = function (_Component) {
     key: 'initPropData',
     value: function initPropData(element, layer, state) {
       try {
+        debugger;
         console.log("init prop data", element.type);
         var catalog = this.context.catalog;
 
         var catalogElement = catalog.getElement(element.type);
-
         var mapped = {};
+
         for (var name in catalogElement.properties) {
           mapped[name] = new Map({
             currentValue: element.properties.has(name) ? element.properties.get(name) : fromJS(catalogElement.properties[name].defaultValue),
@@ -174,7 +175,8 @@ var ElementEditor = function (_Component) {
 
         return new Map(mapped);
       } catch (error) {
-        return null;
+        debugger;
+        return new Map({});
       }
     }
   }, {
