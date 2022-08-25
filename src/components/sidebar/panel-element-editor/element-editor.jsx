@@ -128,7 +128,6 @@ export default class ElementEditor extends Component {
 
   initPropData(element, layer, state) {
     try {
-      debugger;
       console.log("init prop data", element.type)
       let { catalog } = this.context;
       let catalogElement = catalog.getElement(element.type);
@@ -143,7 +142,6 @@ export default class ElementEditor extends Component {
 
       return new Map(mapped);
     } catch (error) {
-      debugger;
       return new Map({});
     }
   }

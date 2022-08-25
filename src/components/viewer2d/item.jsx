@@ -56,7 +56,6 @@ export default function Item({ layer, item, scene, catalog }) {
 
   } catch (error) {
     // console.log("Item catalog.getElement:", item.type, error)
-    debugger;
     return (<g></g>)
 
   }
