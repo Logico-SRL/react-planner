@@ -42,7 +42,7 @@ var STYLE_TITLE = {
   padding: '1em',
   textTransform: 'capitalize',
   WebkitTransition: 'all .15s ease-in-out',
-  color: rgb(46, 47, 51)
+  color: 'rgb(46, 47, 51)'
 };
 
 var STYLE_TITLE_HOVERED = _extends({}, STYLE_TITLE, {

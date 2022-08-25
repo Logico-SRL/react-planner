@@ -55,7 +55,7 @@ var searchContainer = {
 var searchText = {
   width: '8em',
   display: 'inline-block',
-  color: rgb(46, 47, 51)
+  color: 'rgb(46, 47, 51)'
 };
 
 var searchInput = {
@@ -68,7 +68,7 @@ var searchInput = {
 
 var historyContainer = _extends({}, searchContainer, {
   padding: '0.2em 0.625em',
-  color: rgb(46, 47, 51),
+  color: 'rgb(46, 47, 51)',
   display: 'none' // REMOVED BY CZ
 });
 
