@@ -24,7 +24,7 @@ export default function Item({ layer, item, scene, catalog }) {
   let { x, y, rotation } = item;
 
   try {
-    console.log("catalog.getElement:", item.type)
+    console.log("Item catalog.getElement:", item.type)
     let renderedItem = catalog.getElement(item.type).render2D(item, layer, scene);
 
     return (
@@ -55,7 +55,8 @@ export default function Item({ layer, item, scene, catalog }) {
     )
 
   } catch (error) {
-
+    // console.log("Item catalog.getElement:", item.type, error)
+    debugger;
     return (<g></g>)
 
   }
