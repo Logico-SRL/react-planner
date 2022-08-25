@@ -85,7 +85,7 @@ const STYLE_DESCRIPTION = {
   WebkitBoxOrient: 'vertical',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
-  color: rgb(46, 47, 51),
+  color: '#2e2f33',
 };
 
 const STYLE_TAGS = {

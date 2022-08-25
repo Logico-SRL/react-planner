@@ -45,7 +45,7 @@ const searchContainer = {
 const searchText = {
   width: '8em',
   display: 'inline-block',
-  color: rgb(46, 47, 51),
+  color: 'rgb(46, 47, 51)',
 };
 
 const searchInput = {
@@ -59,7 +59,7 @@ const searchInput = {
 const historyContainer = {
   ...searchContainer,
   padding: '0.2em 0.625em',
-  color: rgb(46, 47, 51),
+  color: 'rgb(46, 47, 51)',
   display: 'none' // REMOVED BY CZ
 };
 

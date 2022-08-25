@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {MdNavigateNext} from 'react-icons/md';
+import { MdNavigateNext } from 'react-icons/md';
 import * as SharedStyle from '../../shared-style';
 
 const STYLE_BOX = {
@@ -30,18 +30,18 @@ const STYLE_TITLE = {
   textAlign: 'center',
   display: 'block',
   marginBottom: '.5em',
-  padding:'1em',
+  padding: '1em',
   textTransform: 'capitalize',
   WebkitTransition: 'all .15s ease-in-out',
-  color: rgb(46, 47, 51),
+  color: 'rgb(46, 47, 51)',
 };
 
 const STYLE_TITLE_HOVERED = {
   ...STYLE_TITLE,
   fontSize: '1.4em',
   transform: 'translateY(-60px)',
-  color:'rgb(28, 166, 252)', // HOVER on element
-  marginTop:'0.5em'
+  color: 'rgb(28, 166, 252)', // HOVER on element
+  marginTop: '0.5em'
 };
 
 const STYLE_NEXT_HOVER = {
@@ -66,7 +66,7 @@ export default class CatalogPageItem extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {hover: false};
+    this.state = { hover: false };
   }
 
   changePage(newPage) {
@@ -81,13 +81,13 @@ export default class CatalogPageItem extends Component {
       <div
         style={hover ? STYLE_BOX_HOVER : STYLE_BOX}
         onClick={e => this.changePage(page.name)}
-        onMouseEnter={e => this.setState({hover: true})}
-        onMouseLeave={e => this.setState({hover: false})}
+        onMouseEnter={e => this.setState({ hover: true })}
+        onMouseLeave={e => this.setState({ hover: false })}
       >
         {hover ?
           <div style={CONTAINER_DIV}>
             <b style={STYLE_TITLE_HOVERED}>{page.label}</b>
-            <MdNavigateNext style={STYLE_NEXT_HOVER}/>
+            <MdNavigateNext style={STYLE_NEXT_HOVER} />
           </div>
           :
           <div style={CONTAINER_DIV}>
