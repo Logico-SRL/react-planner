@@ -159,7 +159,6 @@ var ElementEditor = function (_Component) {
     key: 'initPropData',
     value: function initPropData(element, layer, state) {
       try {
-        debugger;
         console.log("init prop data", element.type);
         var catalog = this.context.catalog;
 
@@ -175,7 +174,6 @@ var ElementEditor = function (_Component) {
 
         return new Map(mapped);
       } catch (error) {
-        debugger;
         return new Map({});
       }
     }

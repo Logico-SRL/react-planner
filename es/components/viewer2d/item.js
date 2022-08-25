@@ -63,7 +63,6 @@ export default function Item(_ref) {
     );
   } catch (error) {
     // console.log("Item catalog.getElement:", item.type, error)
-    debugger;
     return React.createElement('g', null);
   }
 }
