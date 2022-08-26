@@ -27,7 +27,7 @@ var VISIBILITY_MODE = {
 var contentArea = {
   height: 'auto',
   maxHeight: '15em',
-  overflowY: 'auto',
+  // overflowY: 'auto',
   padding: '0.25em 1.15em',
   cursor: 'pointer',
   marginBottom: '1em',
@@ -51,7 +51,8 @@ var elementSelectedStyle = _extends({}, elementStyle, {
 });
 
 var categoryDividerStyle = {
-  paddingBottom: '0.5em',
+  paddingTop: '10px',
+  // paddingBottom: '0.5em', // CZ
   borderBottom: '1px solid #888'
 };
 

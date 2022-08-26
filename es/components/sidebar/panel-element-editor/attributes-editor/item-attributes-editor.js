@@ -57,50 +57,6 @@ export default function ItemAttributesEditor(_ref, _ref2) {
         React.createElement(
           'td',
           { style: firstTdStyle },
-          'X'
-        ),
-        React.createElement(
-          'td',
-          null,
-          React.createElement(FormNumberInput, _extends({
-            value: renderedX,
-            onChange: function onChange(event) {
-              return onUpdate('x', event.target.value);
-            },
-            style: inputStyle,
-            state: state,
-            precision: 2
-          }, rest))
-        )
-      ),
-      React.createElement(
-        'tr',
-        null,
-        React.createElement(
-          'td',
-          { style: firstTdStyle },
-          'Y'
-        ),
-        React.createElement(
-          'td',
-          null,
-          React.createElement(FormNumberInput, _extends({
-            value: renderedY,
-            onChange: function onChange(event) {
-              return onUpdate('y', event.target.value);
-            },
-            style: inputStyle,
-            state: state,
-            precision: 2
-          }, rest))
-        )
-      ),
-      React.createElement(
-        'tr',
-        null,
-        React.createElement(
-          'td',
-          { style: firstTdStyle },
           translator.t('Rotation')
         ),
         React.createElement(
