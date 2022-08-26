@@ -315,8 +315,8 @@ export default function Viewer2D(
       display: 'grid',
       gridRowGap: '0',
       gridColumnGap: '0',
-      gridTemplateColumns: `${rulerSize}px ${width - rulerSize}px`,
-      gridTemplateRows: `${rulerSize}px ${height - rulerSize}px`,
+      gridTemplateColumns: `${rulerSize + 2}px ${width - rulerSize + 25}px`,
+      gridTemplateRows: `${rulerSize + 2}px ${height - rulerSize}px`,
       position: 'relative'
     }}>
       <div style={{ gridColumn: 1, gridRow: 1, backgroundColor: rulerBgColor }}></div>

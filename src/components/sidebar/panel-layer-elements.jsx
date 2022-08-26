@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Panel from './panel';
 import {
-  MODE_IDLE, MODE_2D_ZOOM_IN, MODE_2D_ZOOM_OUT, MODE_2D_PAN, 
+  MODE_IDLE, MODE_2D_ZOOM_IN, MODE_2D_ZOOM_OUT, MODE_2D_PAN,
   MODE_WAITING_DRAWING_LINE, MODE_DRAWING_LINE, MODE_DRAWING_HOLE, MODE_DRAWING_ITEM, MODE_DRAGGING_LINE,
   MODE_DRAGGING_VERTEX, MODE_DRAGGING_ITEM, MODE_DRAGGING_HOLE, MODE_FITTING_IMAGE, MODE_UPLOADING_IMAGE,
   MODE_ROTATING_ITEM
 } from '../../constants';
 import * as SharedStyle from '../../shared-style';
-import {MdSearch} from 'react-icons/md';
+import { MdSearch } from 'react-icons/md';
 
 const VISIBILITY_MODE = {
   MODE_IDLE, MODE_2D_ZOOM_IN, MODE_2D_ZOOM_OUT, MODE_2D_PAN,
@@ -20,7 +20,7 @@ const VISIBILITY_MODE = {
 const contentArea = {
   height: 'auto',
   maxHeight: '15em',
-  overflowY: 'auto',
+  // overflowY: 'auto',
   padding: '0.25em 1.15em',
   cursor: 'pointer',
   marginBottom: '1em',
@@ -45,13 +45,14 @@ const elementSelectedStyle = {
 };
 
 const categoryDividerStyle = {
-  paddingBottom: '0.5em',
+  paddingTop: '10px',
+  // paddingBottom: '0.5em', // CZ
   borderBottom: '1px solid #888',
 };
 
-const tableSearchStyle = {width: '100%', marginTop: '0.8em'};
-const searchIconStyle = {fontSize: '1.5em'};
-const searchInputStyle = {fontSize: '1em', width: '100%', height: '1em', padding: '1em 0.5em'};
+const tableSearchStyle = { width: '100%', marginTop: '0.8em' };
+const searchIconStyle = { fontSize: '1.5em' };
+const searchInputStyle = { fontSize: '1em', width: '100%', height: '1em', padding: '1em 0.5em' };
 
 export default class PanelLayerElement extends Component {
 
@@ -78,7 +79,7 @@ export default class PanelLayerElement extends Component {
     let oldElements = this.state.elements;
     let newElements = nextState.elements;
 
-    if(
+    if (
       oldElements.lines.hashCode() !== newElements.lines.hashCode() ||
       oldElements.holes.hashCode() !== newElements.holes.hashCode() ||
       oldElements.items.hashCode() !== newElements.items.hashCode()
@@ -90,7 +91,7 @@ export default class PanelLayerElement extends Component {
   componentWillReceiveProps(nextProps) {
     let layer = nextProps.layers.get(nextProps.selectedLayer);
 
-    if ( this.props.layers.hashCode() === nextProps.layers.hashCode() ) return;
+    if (this.props.layers.hashCode() === nextProps.layers.hashCode()) return;
 
     let elements = {
       lines: layer.lines,
@@ -111,7 +112,7 @@ export default class PanelLayerElement extends Component {
         }
       });
     } else {
-      this.setState({elements, matchedElements: elements});
+      this.setState({ elements, matchedElements: elements });
     }
   }
 
@@ -148,12 +149,12 @@ export default class PanelLayerElement extends Component {
 
           <table style={tableSearchStyle}>
             <tbody>
-            <tr>
-              <td><MdSearch style={searchIconStyle}/></td>
-              <td><input type="text" style={searchInputStyle} onChange={(e) => {
-                this.matcharray(e.target.value);
-              }}/></td>
-            </tr>
+              <tr>
+                <td><MdSearch style={searchIconStyle} /></td>
+                <td><input type="text" style={searchInputStyle} onChange={(e) => {
+                  this.matcharray(e.target.value);
+                }} /></td>
+              </tr>
             </tbody>
           </table>
 

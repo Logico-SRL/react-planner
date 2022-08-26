@@ -26,7 +26,7 @@ export default function ItemAttributesEditor({element, onUpdate, attributeFormDa
             />
           </td>
         </tr>
-        <tr>
+        {/* <tr>
           <td style={firstTdStyle}>X</td>
           <td>
             <FormNumberInput
@@ -38,8 +38,8 @@ export default function ItemAttributesEditor({element, onUpdate, attributeFormDa
               {...rest}
             />
           </td>
-        </tr>
-        <tr>
+        </tr> */}
+        {/* <tr>
           <td style={firstTdStyle}>Y</td>
           <td>
             <FormNumberInput
@@ -51,7 +51,7 @@ export default function ItemAttributesEditor({element, onUpdate, attributeFormDa
               {...rest}
             />
           </td>
-        </tr>
+        </tr> */}
         <tr>
           <td style={firstTdStyle}>{translator.t('Rotation')}</td>
           <td>

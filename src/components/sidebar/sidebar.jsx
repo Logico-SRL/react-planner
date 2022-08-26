@@ -13,9 +13,10 @@ import If from '../../utils/react-if';
 const STYLE = {
   backgroundColor: SharedStyle.PRIMARY_COLOR.main,
   display: 'block',
-  overflowY: 'auto',
+  // overflowY: 'auto',
   overflowX: 'hidden',
-  paddingBottom: '20px'
+  paddingBottom: '20px',
+  paddingLef: '10px'
 };
 
 const sortButtonsCb = (a, b) => {
