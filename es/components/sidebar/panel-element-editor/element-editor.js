@@ -159,7 +159,7 @@ var ElementEditor = function (_Component) {
     key: 'initPropData',
     value: function initPropData(element, layer, state) {
       try {
-        console.log("init prop data", element.type);
+        console.log("1. init prop data", element.type);
         var catalog = this.context.catalog;
 
         var catalogElement = catalog.getElement(element.type);

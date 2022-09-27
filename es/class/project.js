@@ -86,6 +86,7 @@ var Project = function () {
   }, {
     key: 'unselectAll',
     value: function unselectAll(state) {
+      console.log("1.unselectAll");
       state.getIn(['scene', 'layers']).forEach(function (_ref) {
         var layerID = _ref.id;
         state = Layer.unselectAll(state, layerID).updatedState;
@@ -142,6 +143,8 @@ var Project = function () {
     key: 'rollback',
     value: function rollback(state) {
       var sceneHistory = state.sceneHistory;
+      console.log("1.rollback:", sceneHistory.last);
+      console.log("2.rollback:", sceneHistory.list);
 
       if (!sceneHistory.last && sceneHistory.list.isEmpty()) {
         return { updatedState: state };
