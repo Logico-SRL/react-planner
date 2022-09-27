@@ -103,7 +103,10 @@ export default class Toolbar extends Component {
         dom: <ToolbarButton
           active={[MODE_VIEWING_CATALOG].includes(mode)}
           tooltip={translator.t('Open catalog')}
-          onClick={event => projectActions.openCatalog()}>
+          onClick={event => {
+            projectActions.unselectAll();
+            projectActions.openCatalog();
+          }}>
           <FaPlus />
         </ToolbarButton>
       },
