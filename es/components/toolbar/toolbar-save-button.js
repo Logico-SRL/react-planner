@@ -13,8 +13,8 @@ export default function ToolbarSaveButton(_ref, _ref2) {
   var saveProjectToFile = function saveProjectToFile(e) {
     e.preventDefault();
     state = Project.unselectAll(state).updatedState;
-    console.log("saveProjectToFile state:", state);
-    console.log("saveProjectToFile scene:", state.get('scene').toJS());
+    // console.log("saveProjectToFile state:", state)
+    // console.log("saveProjectToFile scene:", state.get('scene').toJS())
     browserDownload(state.get('scene').toJS());
   };
 

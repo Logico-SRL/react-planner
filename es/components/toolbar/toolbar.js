@@ -129,7 +129,8 @@ var Toolbar = function (_Component) {
             active: [MODE_VIEWING_CATALOG].includes(mode),
             tooltip: translator.t('Open catalog'),
             onClick: function onClick(event) {
-              return projectActions.openCatalog();
+              projectActions.unselectAll();
+              projectActions.openCatalog();
             } },
           React.createElement(FaPlus, null)
         )
