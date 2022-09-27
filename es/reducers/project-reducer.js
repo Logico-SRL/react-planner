@@ -10,7 +10,9 @@ export default function (state, action) {
       return Project.newProject(state).updatedState;
 
     case LOAD_PROJECT:
-      return Project.loadProject(state, action.sceneJSON).updatedState;
+      Project.loadProject(state, action.sceneJSON);
+      // return Project.loadProject(state, action.sceneJSON).updatedState;
+      return Project.unselectAll(state).updatedState;
 
     case OPEN_CATALOG:
       return Project.openCatalog(state).updatedState;
