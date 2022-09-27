@@ -41,7 +41,7 @@ const elementStyle = {
 const elementSelectedStyle = {
   ...elementStyle,
   color: SharedStyle.SECONDARY_COLOR.main,
-  borderColor: SharedStyle.SECONDARY_COLOR.main,
+  // borderColor: SharedStyle.SECONDARY_COLOR.main,
 };
 
 const categoryDividerStyle = {

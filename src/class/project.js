@@ -74,6 +74,7 @@ class Project{
   }
 
   static unselectAll(state) {
+    console.log("1.unselectAll")
     state.getIn(['scene', 'layers']).forEach( ({ id: layerID }) => { state = Layer.unselectAll( state, layerID ).updatedState; });
     state.getIn(['scene', 'groups']).forEach( group => { state = Group.unselect( state, group.get('id') ).updatedState; });
 
@@ -116,6 +117,8 @@ class Project{
 
   static rollback(state) {
     let sceneHistory = state.sceneHistory;
+    console.log("1.rollback:", sceneHistory.last);
+    console.log("2.rollback:", sceneHistory.list);
 
     if (!sceneHistory.last && sceneHistory.list.isEmpty()) {
       return { updatedState: state };

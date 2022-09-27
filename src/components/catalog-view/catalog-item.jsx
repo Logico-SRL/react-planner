@@ -76,7 +76,7 @@ const STYLE_PLUS_HOVER = {
 const STYLE_DESCRIPTION = {
   display: 'block',
   display: '-webkit-box',
-  height: '2em',
+  height: '1.5em',
   margin: '0 auto',
   fontSize: '0.75em',
   fontStyle:'italic',

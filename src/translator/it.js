@@ -26,6 +26,7 @@ export default {
   "Groups":"Gruppi",
   "Guides":"Guide",
   "height": "Altezza",
+  "Holes":"Varchi",
   "Horizontal":"Orizzontale",
   "Items":"Elementi",
   "Last Selected":"Ultimi Selezionati",

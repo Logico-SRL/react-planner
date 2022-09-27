@@ -128,7 +128,7 @@ export default class ElementEditor extends Component {
 
   initPropData(element, layer, state) {
     try {
-      console.log("init prop data", element.type)
+      console.log("1. init prop data", element.type)
       let { catalog } = this.context;
       let catalogElement = catalog.getElement(element.type);
       let mapped = {};

@@ -53,7 +53,8 @@ const searchInput = {
   height: '2em',
   margin: '0',
   padding: '0 1em',
-  border: '1px solid #EEE'
+  border: '1px solid #EEE',
+  color: '#000000'
 };
 
 const historyContainer = {
