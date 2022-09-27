@@ -36,7 +36,9 @@ class Project{
 
   static loadProject(state, sceneJSON) {
     state = new State({ scene: sceneJSON, catalog: state.catalog.toJS() });
-
+    // console.log("1.unselectAll")
+    // state.getIn(['scene', 'layers']).forEach( ({ id: layerID }) => { state = Layer.unselectAll( state, layerID ).updatedState; });
+    // state.getIn(['scene', 'groups']).forEach( group => { state = Group.unselect( state, group.get('id') ).updatedState; });
     return { updatedState: state };
   }
 
