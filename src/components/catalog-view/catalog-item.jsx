@@ -113,6 +113,7 @@ export default class CatalogItem extends Component {
   }
 
   select() {
+    debugger;
     let element = this.props.element;
 
     switch (element.prototype) {
@@ -131,12 +132,12 @@ export default class CatalogItem extends Component {
   }
 
   render() {
-    // debugger;
+    debugger;
     let element = this.props.element;
     let hover = this.state.hover;
     
-    console.log("element.info.tag:", element.info.tag)
-    console.log("element.info:", element.info)
+    // console.log("element.info.tag:", element.info.tag)
+    // console.log("element.info:", element.info)
     console.log("element:", element)
 
     return (
