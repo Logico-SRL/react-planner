@@ -33,6 +33,7 @@ export default function keyboard() {
                 store.dispatch(remove());
               break;
             }
+          case KEYBOARD_BUTTON_CODE.Q:
           case KEYBOARD_BUTTON_CODE.ESC:
             {
               store.dispatch(rollback());
