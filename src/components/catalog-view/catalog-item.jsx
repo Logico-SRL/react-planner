@@ -131,8 +131,13 @@ export default class CatalogItem extends Component {
   }
 
   render() {
+    // debugger;
     let element = this.props.element;
     let hover = this.state.hover;
+    
+    console.log("element.info.tag:", element.info.tag)
+    console.log("element.info:", element.info)
+    console.log("element:", element)
 
     return (
       <div
