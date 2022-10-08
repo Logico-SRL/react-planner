@@ -18,6 +18,7 @@ export default function keyboard() {
             if ([MODE_IDLE].includes(mode)) store.dispatch(remove());
             break;
           }
+        case KEYBOARD_BUTTON_CODE.Q:
         case KEYBOARD_BUTTON_CODE.ESC:
           {
             store.dispatch(rollback());
