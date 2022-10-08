@@ -141,9 +141,11 @@ var CatalogItem = function (_Component) {
     value: function render() {
       var _this2 = this;
 
+      debugger;
       var element = this.props.element;
       var hover = this.state.hover;
-
+      console.log("element:", element);
+      console.log("hover:", hover);
       return React.createElement(
         'div',
         {
