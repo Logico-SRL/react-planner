@@ -120,6 +120,7 @@ var CatalogItem = function (_Component) {
   _createClass(CatalogItem, [{
     key: 'select',
     value: function select() {
+      debugger;
       var element = this.props.element;
 
       switch (element.prototype) {
@@ -141,12 +142,12 @@ var CatalogItem = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      // debugger;
+      debugger;
       var element = this.props.element;
       var hover = this.state.hover;
 
-      console.log("element.info.tag:", element.info.tag);
-      console.log("element.info:", element.info);
+      // console.log("element.info.tag:", element.info.tag)
+      // console.log("element.info:", element.info)
       console.log("element:", element);
 
       return React.createElement(
