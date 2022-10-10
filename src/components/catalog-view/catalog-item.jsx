@@ -136,7 +136,7 @@ export default class CatalogItem extends Component {
     let element = this.props.element;
     let hover = this.state.hover;
     // console.log("element.info.tag:", element.info.tag)
-    // console.log("element.info:", element.info)
+    console.log("element.info:", element.info)
     // console.log("element:", element)
     return (
       <div
@@ -152,9 +152,9 @@ export default class CatalogItem extends Component {
           </div>
         </div>
         <div style={STYLE_DESCRIPTION}>{element.info.description}</div>
-        <ul style={STYLE_TAGS}>
+        {/* <ul style={STYLE_TAGS}>
           {element.info.tag.map((tag, index) => <li style={STYLE_TAG} key={index}>{tag}</li>)}
-        </ul>
+        </ul> */}
       </div>
     );
   }
