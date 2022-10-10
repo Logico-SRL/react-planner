@@ -145,7 +145,7 @@ var CatalogItem = function (_Component) {
       var element = this.props.element;
       var hover = this.state.hover;
       // console.log("element.info.tag:", element.info.tag)
-      // console.log("element.info:", element.info)
+      console.log("element.info:", element.info);
       // console.log("element:", element)
       return React.createElement(
         'div',
@@ -179,17 +179,6 @@ var CatalogItem = function (_Component) {
           'div',
           { style: STYLE_DESCRIPTION },
           element.info.description
-        ),
-        React.createElement(
-          'ul',
-          { style: STYLE_TAGS },
-          element.info.tag.map(function (tag, index) {
-            return React.createElement(
-              'li',
-              { style: STYLE_TAG, key: index },
-              tag
-            );
-          })
         )
       );
     }
